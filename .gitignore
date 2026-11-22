@@ -1,0 +1,25 @@
+# Private personal family datasets (NEVER COMMIT TO PUBLIC REPO)
+data/
+source_data/
+*.gramps
+*.ged
+!samples/*.ged
+!samples/*.json
+family_tree_v6.json
+
+# Dependencies & Build artifacts
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+
+# Environment & Logs
+.env
+.env.local
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db

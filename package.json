@@ -1,0 +1,70 @@
+{
+  "name": "@fahim/react-family-tree",
+  "version": "1.0.0",
+  "description": "Zero-backend, client-rendered interactive React family tree visualizer with GEDCOM (5.5.x & 7.0) and JSON support",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:lib": "vite build --mode lib && tsc -p tsconfig.lib.json",
+    "build:demo": "vite build",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "react",
+    "genealogy",
+    "family-tree",
+    "gedcom",
+    "pedigree",
+    "dag",
+    "canvas",
+    "svg",
+    "zero-backend"
+  ],
+  "author": "Fahim Abdun-Nur",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fahim-a/react-family-tree.git"
+  },
+  "homepage": "https://fahim-a.github.io/react-family-tree",
+  "bugs": {
+    "url": "https://github.com/fahim-a/react-family-tree/issues"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^5.1.1",
+    "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "postcss": "^8.4.49",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vitest": "^5.1.1"
+  }
+}
