@@ -90,10 +90,13 @@ export function normalizeTreeData(input: unknown): TreeData {
       else gender = 'U';
     }
 
-    // Name resolution
-    const fullName = p.fullName || (p.first && p.surname ? `${p.first} ${p.surname}` : p.name || id);
-    const first = p.first || fullName.split(' ')[0] || '';
-    const surname = p.surname || fullName.split(' ').slice(1).join(' ') || '';
+    // Name resolution & GEDCOM slash/underscore sanitization
+    let fullName = p.fullName || (p.first && p.surname ? `${p.first} ${p.surname}` : p.name || id);
+    fullName = fullName.replace(/\/\/+/g, '').replace(/\/+/g, ' ').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+    let first = (p.first || fullName.split(' ')[0] || '').replace(/\/\/+/g, '').replace(/\/+/g, ' ').replace(/_/g, ' ').trim();
+    let surname = (p.surname || (fullName.split(' ').length > 1 ? fullName.split(' ').slice(1).join(' ') : '')).replace(/\/\/+/g, '').replace(/\/+/g, ' ').replace(/_/g, ' ').trim();
+    if (!first && fullName) first = fullName;
+    if (first && surname && fullName === id) fullName = `${first} ${surname}`;
 
     people[id] = {
       ...p,

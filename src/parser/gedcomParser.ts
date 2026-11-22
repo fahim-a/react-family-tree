@@ -76,13 +76,18 @@ export function parseGedcom(gedcomContent: string): TreeData {
       if (level === 1) {
         currentSubContext = null;
         if (part1 === 'NAME') {
-          // Format: Given /Surname/
-          const surnameMatch = part2.match(/\/([^/]+)\//);
-          const surname = surnameMatch ? surnameMatch[1].trim() : '';
-          const first = part2.replace(/\/[^/]+\//, '').trim();
+          // Format: Given /Surname/ or Given // (no surname in GEDCOM standard)
+          const surnameMatch = part2.match(/\/([^/]*)\//);
+          let surname = surnameMatch ? surnameMatch[1].replace(/\//g, '').trim() : '';
+          let first = part2.replace(/\/([^/]*)\//g, '').replace(/\//g, '').trim();
+
+          // Clean legacy GEDCOM underscores (e.g. "Frederick_III" -> "Frederick III")
+          first = first.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+          surname = surname.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+
           currentPerson.first = first;
           currentPerson.surname = surname;
-          currentPerson.fullName = surname ? `${first} ${surname}` : first;
+          currentPerson.fullName = surname ? (first ? `${first} ${surname}` : surname) : first;
         } else if (part1 === 'SEX') {
           const s = part2.toUpperCase().trim();
           currentPerson.gender = (s === 'M' || s === 'F') ? s : 'U';
