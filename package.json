@@ -1,5 +1,5 @@
 {
-  "name": "@fahim/react-family-tree",
+  "name": "@fahim-a/react-family-tree",
   "version": "1.0.0",
   "description": "Zero-backend, client-rendered interactive React family tree visualizer with GEDCOM (5.5.x & 7.0) and JSON support",
   "type": "module",

@@ -1,4 +1,4 @@
-# @fahim/react-family-tree
+# @fahim-a/react-family-tree
 
 A zero-backend, client-rendered interactive family tree visualizer and genealogy editor for React, featuring GEDCOM (5.5.x & 7.0) and JSON support, kinship analysis, lineage highlighting, photo albums, and time-travel history reverts.
 
@@ -112,7 +112,7 @@ Tested and optimized across modern screen resolutions from mobile phones to 4K d
 ## Installation
 
 ```bash
-npm install @fahim/react-family-tree
+npm install @fahim-a/react-family-tree
 ```
 
 ---
@@ -121,8 +121,8 @@ npm install @fahim/react-family-tree
 
 ```tsx
 import React, { useState } from 'react';
-import { FamilyTree, parseGedcom } from '@fahim/react-family-tree';
-import '@fahim/react-family-tree/style.css';
+import { FamilyTree, parseGedcom } from '@fahim-a/react-family-tree';
+import '@fahim-a/react-family-tree/style.css';
 
 export function App() {
   const [data, setData] = useState(() => parseGedcom(rawGedcomString));
@@ -173,7 +173,7 @@ import {
   getAncestors,
   getDescendants,
   findShortestKinshipPath
-} from '@fahim/react-family-tree';
+} from '@fahim-a/react-family-tree';
 
 // 1. Calculate kinship between two relatives
 const kinship = calculateRelationship(treeData, 'I7', 'I10');
@@ -192,7 +192,7 @@ const path = findShortestKinshipPath(treeData, 'I9', 'I10');
 
 ### Tree History & Time-Travel Revert
 ```typescript
-import { TreeHistoryManager, useTreeHistory } from '@fahim/react-family-tree';
+import { TreeHistoryManager, useTreeHistory } from '@fahim-a/react-family-tree';
 
 // Pure TypeScript usage (Node, Web Workers, or React):
 const manager = new TreeHistoryManager(initialData, 'Baseline');

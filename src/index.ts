@@ -1,3 +1,4 @@
+import './lib.css';
 export * from './types';
 export * from './parser/gedcomParser';
 export * from './parser/privacyFilter';

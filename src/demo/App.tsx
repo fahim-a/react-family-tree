@@ -361,7 +361,7 @@ export const App: React.FC = () => {
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-5 h-5 text-emerald-500" />
                 <h2 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-950'}`}>
-                  Getting Started with @fahim/react-family-tree
+                  Getting Started with @fahim-a/react-family-tree
                 </h2>
               </div>
               <p className="leading-relaxed">
@@ -377,12 +377,12 @@ export const App: React.FC = () => {
               <pre className={`p-4 rounded-xl font-mono text-xs overflow-x-auto border ${isDark ? 'bg-slate-950 border-slate-800 text-emerald-400' : 'bg-slate-900 border-slate-700 text-emerald-300'
                 }`}>
                 {`// 1. Install package
-npm install @fahim/react-family-tree
+npm install @fahim-a/react-family-tree
 
 // 2. Import into your React application
 import React, { useState } from 'react';
-import { FamilyTree, parseGedcom, exportGedcom, exportJson } from '@fahim/react-family-tree';
-import '@fahim/react-family-tree/style.css';
+import { FamilyTree, parseGedcom, exportGedcom, exportJson } from '@fahim-a/react-family-tree';
+import '@fahim-a/react-family-tree/style.css';
 
 export function MyGenealogyApp() {
   const [data, setData] = useState(() => parseGedcom(rawGedcomString));
@@ -490,7 +490,7 @@ export function MyGenealogyApp() {
   getAncestors,
   getDescendants,
   findShortestKinshipPath
-} from '@fahim/react-family-tree';
+} from '@fahim-a/react-family-tree';
 
 // 1. Calculate kinship between two people
 const result = calculateRelationship(data, 'I7', 'I10');
@@ -518,7 +518,7 @@ const path = findShortestKinshipPath(data, 'I9', 'I10');`}
               </p>
               <pre className={`p-4 rounded-xl font-mono text-xs overflow-x-auto border ${isDark ? 'bg-slate-950 border-slate-800 text-amber-400' : 'bg-slate-900 border-slate-700 text-amber-300'
                 }`}>
-                {`import { useTreeHistory, TreeHistoryManager } from '@fahim/react-family-tree';
+                {`import { useTreeHistory, TreeHistoryManager } from '@fahim-a/react-family-tree';
 
 // Pure TypeScript usage (works in Node, Web Workers, or React):
 const manager = new TreeHistoryManager(initialTreeData, 'Baseline');
@@ -542,7 +542,7 @@ manager.undo();           // Reverses the revert itself!`}
                 5. Normalized JSON Schema Specification
               </h3>
               <p className="mb-3 leading-relaxed text-xs">
-                In addition to standard <code>.ged</code> GEDCOM files, <code>@fahim/react-family-tree</code> natively consumes and exports a clean, normalized JSON schema (<code>TreeData</code>). You can upload or generate JSON files following this structure:
+                In addition to standard <code>.ged</code> GEDCOM files, <code>@fahim-a/react-family-tree</code> natively consumes and exports a clean, normalized JSON schema (<code>TreeData</code>). You can upload or generate JSON files following this structure:
               </p>
               <pre className={`p-4 rounded-xl font-mono text-xs overflow-x-auto border ${isDark ? 'bg-slate-950 border-slate-800 text-sky-400' : 'bg-slate-900 border-slate-700 text-sky-300'
                 }`}>
@@ -611,7 +611,7 @@ manager.undo();           // Reverses the revert itself!`}
                 6. Library Packaging & Publishing Architecture
               </h3>
               <p className="mb-3 leading-relaxed text-xs">
-                <code>@fahim/react-family-tree</code> is packaged as an isomorphic zero-dependency NPM distribution that bundles both ESM (<code>dist/index.js</code>) and CommonJS (<code>dist/index.cjs</code>), along with TypeScript type definitions (<code>dist/index.d.ts</code>) and compiled CSS (<code>dist/style.css</code>).
+                <code>@fahim-a/react-family-tree</code> is packaged as an isomorphic zero-dependency NPM distribution that bundles both ESM (<code>dist/index.js</code>) and CommonJS (<code>dist/index.cjs</code>), along with TypeScript type definitions (<code>dist/index.d.ts</code>) and compiled CSS (<code>dist/style.css</code>).
               </p>
               <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-400">
                 <li><strong className={isDark ? 'text-slate-200' : 'text-slate-800'}>Build Output:</strong> Run <code>npm run build:lib</code> to generate the library bundle, or <code>npm run build</code> to compile both the library and demo website.</li>

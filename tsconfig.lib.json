@@ -7,5 +7,5 @@
     "outDir": "./dist"
   },
   "include": ["src"],
-  "exclude": ["src/demo", "src/main.tsx"]
+  "exclude": ["src/demo", "src/main.tsx", "src/__tests__"]
 }
