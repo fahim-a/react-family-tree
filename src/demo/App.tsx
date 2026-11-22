@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FamilyTree } from '../components/FamilyTree';
 import { parseGedcom } from '../parser/gedcomParser';
+import { normalizeTreeData } from '../parser/treeNormalizer';
 import { getSampleTreeWithMedia } from './sampleData';
 import { createEmptyTree } from '../editor/treeMutations';
 import { downloadGedcomFile } from '../exporter/gedcomExporter';
@@ -69,11 +70,16 @@ export const App: React.FC = () => {
       if (file.name.endsWith('.json')) {
         try {
           const parsed = JSON.parse(content);
-          if (parsed && typeof parsed === 'object' && parsed.people) {
-            setTreeData(parsed);
-            setCurrentDatasetName(file.name);
+          if (parsed && typeof parsed === 'object') {
+            const normalized = normalizeTreeData(parsed);
+            if (Object.keys(normalized.people).length > 0) {
+              setTreeData(normalized);
+              setCurrentDatasetName(file.name);
+            } else {
+              alert('Invalid family tree JSON: no individuals found in dataset.');
+            }
           } else {
-            alert('Invalid family tree JSON: missing "people" object.');
+            alert('Invalid family tree JSON: root element must be a valid JSON object.');
           }
         } catch (err: any) {
           alert(`Failed to parse JSON file: ${err.message}`);

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { TreeData, LayoutNode, PrivacyConfig, Person, MediaItem } from '../types';
 import { computeTreeLayout } from '../layout/bimodalLayout';
+import { normalizeTreeData } from '../parser/treeNormalizer';
 import { applyPrivacyFilter, DEFAULT_PRIVACY_CONFIG } from '../parser/privacyFilter';
 import {
   getAncestors,
@@ -87,13 +88,16 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
 }) => {
   const isDark = theme === 'dark';
 
+  // Normalize incoming input data (supports array-based, Gramps, and legacy schemas)
+  const normalizedData = useMemo(() => normalizeTreeData(data), [data]);
+
   // Privacy State
   const [privacyEnabled, setPrivacyEnabled] = useState<boolean>(
     privacyConfig.enabled ?? DEFAULT_PRIVACY_CONFIG.enabled
   );
 
   // History & Revert State
-  const historyManager = useTreeHistory(data, {
+  const historyManager = useTreeHistory(normalizedData, {
     initialReason: datasetKey ? `Loaded "${datasetKey}"` : 'Initial Tree Loaded'
   });
   const [isHistoryModalOpen, setIsHistoryModalOpen] = useState<boolean>(false);
@@ -103,20 +107,20 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   useEffect(() => {
     if (datasetKey !== undefined && datasetKey !== prevDatasetKeyRef.current) {
       prevDatasetKeyRef.current = datasetKey;
-      historyManager.clearHistory(data, `Loaded "${datasetKey}"`);
+      historyManager.clearHistory(normalizedData, `Loaded "${datasetKey}"`);
     }
-  }, [datasetKey, data, historyManager]);
+  }, [datasetKey, normalizedData, historyManager]);
 
   // Track external data changes (e.g. blank tree or uploaded dataset)
-  const prevDataRef = useRef<TreeData>(data);
+  const prevDataRef = useRef<TreeData>(normalizedData);
   useEffect(() => {
-    if (data !== prevDataRef.current) {
-      prevDataRef.current = data;
-      if (data !== historyManager.currentData) {
-        historyManager.clearHistory(data, datasetKey ? `Loaded "${datasetKey}"` : 'New Tree Loaded');
+    if (normalizedData !== prevDataRef.current) {
+      prevDataRef.current = normalizedData;
+      if (normalizedData !== historyManager.currentData) {
+        historyManager.clearHistory(normalizedData, datasetKey ? `Loaded "${datasetKey}"` : 'New Tree Loaded');
       }
     }
-  }, [data, datasetKey, historyManager]);
+  }, [normalizedData, datasetKey, historyManager]);
 
   // Undo / Redo / Revert Handlers
   const handleUndo = useCallback(() => {
@@ -170,11 +174,11 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
 
   // Apply privacy filter
   const processedData = useMemo(() => {
-    return applyPrivacyFilter(data, {
+    return applyPrivacyFilter(historyManager.currentData, {
       ...privacyConfig,
       enabled: privacyEnabled
     });
-  }, [data, privacyConfig, privacyEnabled]);
+  }, [historyManager.currentData, privacyConfig, privacyEnabled]);
 
   // Compute Layout (Normalized positive coordinates)
   const layout = useMemo(() => {
@@ -560,7 +564,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   const handleSavePerson = (updates: Partial<Person>) => {
     if (!editingPerson) return;
     const targetName = editingPerson.fullName;
-    const nextData = mutateUpdatePerson(data, editingPerson.id, updates);
+    const nextData = mutateUpdatePerson(historyManager.currentData, editingPerson.id, updates);
     historyManager.recordChange(
       `Updated details for "${targetName}"`,
       nextData,
@@ -573,7 +577,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   };
 
   const handleAddRootPerson = (personData: Partial<Person>) => {
-    const { data: nextData, personId } = mutateAddPerson(data, personData);
+    const { data: nextData, personId } = mutateAddPerson(historyManager.currentData, personData);
     const targetName = personData.fullName || `${personData.first || ''} ${personData.surname || ''}`.trim() || 'New Person';
     historyManager.recordChange(
       `Added independent person "${targetName}"`,
@@ -589,9 +593,9 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
 
   const handleAddSpouse = (spouseOrId: Partial<Person> | string, marriage?: { date?: string; year?: number; place?: string }) => {
     if (!addRelativeToPerson) return;
-    const { data: nextData, spouseId } = mutateAddSpouse(data, addRelativeToPerson.id, spouseOrId, marriage);
+    const { data: nextData, spouseId } = mutateAddSpouse(historyManager.currentData, addRelativeToPerson.id, spouseOrId, marriage);
     const spouseName = typeof spouseOrId === 'string'
-      ? (data.people[spouseOrId]?.fullName || spouseOrId)
+      ? (historyManager.currentData.people[spouseOrId]?.fullName || spouseOrId)
       : (spouseOrId.fullName || `${spouseOrId.first || ''} ${spouseOrId.surname || ''}`.trim() || 'Spouse');
     historyManager.recordChange(
       `Added spouse "${spouseName}" to ${addRelativeToPerson.fullName}`,
@@ -607,9 +611,9 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
 
   const handleAddChild = (childOrId: Partial<Person> | string) => {
     if (!addRelativeToPerson) return;
-    const { data: nextData, childId } = mutateAddChild(data, addRelativeToPerson.id, childOrId);
+    const { data: nextData, childId } = mutateAddChild(historyManager.currentData, addRelativeToPerson.id, childOrId);
     const childName = typeof childOrId === 'string'
-      ? (data.people[childOrId]?.fullName || childOrId)
+      ? (historyManager.currentData.people[childOrId]?.fullName || childOrId)
       : (childOrId.fullName || `${childOrId.first || ''} ${childOrId.surname || ''}`.trim() || 'Child');
     historyManager.recordChange(
       `Added child "${childName}" to ${addRelativeToPerson.fullName}`,
@@ -625,9 +629,9 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
 
   const handleAddParent = (parentOrId: Partial<Person> | string, relation: 'father' | 'mother') => {
     if (!addRelativeToPerson) return;
-    const { data: nextData, parentId } = mutateAddParent(data, addRelativeToPerson.id, parentOrId, relation);
+    const { data: nextData, parentId } = mutateAddParent(historyManager.currentData, addRelativeToPerson.id, parentOrId, relation);
     const parentName = typeof parentOrId === 'string'
-      ? (data.people[parentOrId]?.fullName || parentOrId)
+      ? (historyManager.currentData.people[parentOrId]?.fullName || parentOrId)
       : (parentOrId.fullName || `${parentOrId.first || ''} ${parentOrId.surname || ''}`.trim() || relation);
     historyManager.recordChange(
       `Added ${relation} "${parentName}" to ${addRelativeToPerson.fullName}`,
@@ -644,7 +648,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   const handleConfirmDelete = () => {
     if (!deletingPerson) return;
     const targetName = deletingPerson.fullName;
-    const { data: nextData } = mutateRemovePerson(data, deletingPerson.id);
+    const { data: nextData } = mutateRemovePerson(historyManager.currentData, deletingPerson.id);
     historyManager.recordChange(
       `Removed "${targetName}" from tree`,
       nextData,
@@ -661,7 +665,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   };
 
   const handleAddMedia = (mediaData: Omit<MediaItem, 'id'>) => {
-    const { data: nextData } = mutateAddMediaItem(data, mediaData);
+    const { data: nextData } = mutateAddMediaItem(historyManager.currentData, mediaData);
     historyManager.recordChange(
       `Added photograph "${mediaData.title || 'Photo'}"`,
       nextData,
@@ -672,8 +676,8 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   };
 
   const handleSetAsPrimaryAvatar = (mediaId: string, personId: string) => {
-    const nextData = mutateTagPersonInMedia(data, mediaId, personId, true);
-    const p = data.people[personId];
+    const nextData = mutateTagPersonInMedia(historyManager.currentData, mediaId, personId, true);
+    const p = historyManager.currentData.people[personId];
     historyManager.recordChange(
       `Set primary profile avatar for "${p?.fullName || personId}"`,
       nextData,
@@ -685,7 +689,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
   };
 
   const handleDeleteMedia = (mediaId: string) => {
-    const nextData = mutateDeleteMediaItem(data, mediaId);
+    const nextData = mutateDeleteMediaItem(historyManager.currentData, mediaId);
     historyManager.recordChange(
       'Deleted photograph from album',
       nextData,
@@ -1181,7 +1185,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
       {addRelativeToPerson && (
         <AddRelativeModal
           sourcePerson={addRelativeToPerson}
-          allPeople={data.people}
+          allPeople={processedData.people}
           isOpen={true}
           theme={theme}
           onClose={() => setAddRelativeToPerson(null)}
@@ -1218,7 +1222,7 @@ export const FamilyTree: React.FC<FamilyTreeProps> = ({
           isOpen={true}
           theme={theme}
           affectedChildrenCount={
-            deletingPerson.fams.reduce((acc, fId) => acc + (data.families[fId]?.children.length || 0), 0)
+            deletingPerson.fams.reduce((acc, fId) => acc + (processedData.families[fId]?.children.length || 0), 0)
           }
           onClose={() => setDeletingPerson(null)}
           onConfirm={handleConfirmDelete}

@@ -1,6 +1,7 @@
 export * from './types';
 export * from './parser/gedcomParser';
 export * from './parser/privacyFilter';
+export * from './parser/treeNormalizer';
 export * from './layout/bimodalLayout';
 export * from './editor/treeMutations';
 export * from './exporter/gedcomExporter';
