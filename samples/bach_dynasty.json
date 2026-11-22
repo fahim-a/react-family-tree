@@ -1,0 +1,781 @@
+{
+  "meta": {
+    "title": "Johann Sebastian Bach Musical Dynasty (5 Generations)",
+    "compiler": "Public Domain / CC0 Historical Genealogy Benchmark",
+    "version": "1.0",
+    "lastUpdated": "2026-11-22T06:19:01.947Z",
+    "totalPeople": 33,
+    "totalFamilies": 14
+  },
+  "people": {
+    "I1": {
+      "id": "I1",
+      "first": "Veit",
+      "surname": "Bach",
+      "fullName": "Veit Bach",
+      "gender": "M",
+      "death": {
+        "date": "1619",
+        "year": 1619
+      },
+      "fams": [
+        "F1"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I2": {
+      "id": "I2",
+      "first": "Johannes Hans",
+      "surname": "Bach",
+      "fullName": "Johannes Hans Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1550",
+        "year": 1550
+      },
+      "death": {
+        "date": "1626",
+        "year": 1626
+      },
+      "famc": "F1",
+      "fams": [
+        "F2"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I3": {
+      "id": "I3",
+      "first": "Heinrich",
+      "surname": "Bach",
+      "fullName": "Heinrich Bach",
+      "gender": "M",
+      "famc": "F2",
+      "fams": [
+        "F3"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": true
+    },
+    "I4": {
+      "id": "I4",
+      "first": "Johann Christoph",
+      "surname": "Bach",
+      "fullName": "Johann Christoph Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1642",
+        "year": 1642
+      },
+      "death": {
+        "date": "1703",
+        "year": 1703
+      },
+      "famc": "F3",
+      "fams": [
+        "F5"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I5": {
+      "id": "I5",
+      "first": "Johann Michael",
+      "surname": "Bach",
+      "fullName": "Johann Michael Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1648",
+        "year": 1648
+      },
+      "death": {
+        "date": "1694",
+        "year": 1694
+      },
+      "famc": "F3",
+      "fams": [
+        "F4"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I6": {
+      "id": "I6",
+      "first": "Maria Barbara",
+      "surname": "Bach",
+      "fullName": "Maria Barbara Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1684",
+        "year": 1684
+      },
+      "death": {
+        "date": "1720",
+        "year": 1720
+      },
+      "famc": "F4",
+      "fams": [
+        "F8"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I7": {
+      "id": "I7",
+      "first": "Johann Nicolaus",
+      "surname": "Bach",
+      "fullName": "Johann Nicolaus Bach",
+      "gender": "M",
+      "famc": "F5",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": true
+    },
+    "I8": {
+      "id": "I8",
+      "first": "Christoph",
+      "surname": "Bach",
+      "fullName": "Christoph Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1613",
+        "year": 1613
+      },
+      "death": {
+        "date": "1661",
+        "year": 1661
+      },
+      "famc": "F2",
+      "fams": [
+        "F6"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I9": {
+      "id": "I9",
+      "first": "Johann Ambrosius",
+      "surname": "Bach",
+      "fullName": "Johann Ambrosius Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1645",
+        "year": 1645
+      },
+      "death": {
+        "date": "1695",
+        "year": 1695
+      },
+      "famc": "F6",
+      "fams": [
+        "F7"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I10": {
+      "id": "I10",
+      "first": "Johann Christoph",
+      "surname": "Bach",
+      "fullName": "Johann Christoph Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1645",
+        "year": 1645
+      },
+      "death": {
+        "date": "1693",
+        "year": 1693
+      },
+      "famc": "F6",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I11": {
+      "id": "I11",
+      "first": "Maria Elisabetha",
+      "surname": "Lämmerhirt",
+      "fullName": "Maria Elisabetha Lämmerhirt",
+      "gender": "F",
+      "birth": {
+        "date": "1644",
+        "year": 1644
+      },
+      "death": {
+        "date": "1694",
+        "year": 1694
+      },
+      "fams": [
+        "F7"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I12": {
+      "id": "I12",
+      "first": "Johann Sebastian",
+      "surname": "Bach",
+      "fullName": "Johann Sebastian Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1685",
+        "year": 1685
+      },
+      "death": {
+        "date": "1750",
+        "year": 1750
+      },
+      "famc": "F7",
+      "fams": [
+        "F8",
+        "F9"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I13": {
+      "id": "I13",
+      "first": "Johann Jacob",
+      "surname": "Bach",
+      "fullName": "Johann Jacob Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1682",
+        "year": 1682
+      },
+      "death": {
+        "date": "1732",
+        "year": 1732
+      },
+      "famc": "F7",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I14": {
+      "id": "I14",
+      "first": "Wilhelm Friedemann",
+      "surname": "Bach",
+      "fullName": "Wilhelm Friedemann Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1710",
+        "year": 1710
+      },
+      "death": {
+        "date": "1784",
+        "year": 1784
+      },
+      "famc": "F8",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I15": {
+      "id": "I15",
+      "first": "Carl Philipp Emanuel",
+      "surname": "Bach",
+      "fullName": "Carl Philipp Emanuel Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1714",
+        "year": 1714
+      },
+      "death": {
+        "date": "1788",
+        "year": 1788
+      },
+      "famc": "F8",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I16": {
+      "id": "I16",
+      "first": "Anna Magdalena",
+      "surname": "Wilcke",
+      "fullName": "Anna Magdalena Wilcke",
+      "gender": "F",
+      "birth": {
+        "date": "1701",
+        "year": 1701
+      },
+      "death": {
+        "date": "1760",
+        "year": 1760
+      },
+      "fams": [
+        "F9"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I17": {
+      "id": "I17",
+      "first": "Gottfried Heinrich",
+      "surname": "Bach",
+      "fullName": "Gottfried Heinrich Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1724",
+        "year": 1724
+      },
+      "death": {
+        "date": "1763",
+        "year": 1763
+      },
+      "famc": "F9",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I18": {
+      "id": "I18",
+      "first": "Johann Christoph Friedrich",
+      "surname": "Bach",
+      "fullName": "Johann Christoph Friedrich Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1732",
+        "year": 1732
+      },
+      "death": {
+        "date": "1795",
+        "year": 1795
+      },
+      "famc": "F9",
+      "fams": [
+        "F11"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I19": {
+      "id": "I19",
+      "first": "Johann Christian",
+      "surname": "Bach",
+      "fullName": "Johann Christian Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1735",
+        "year": 1735
+      },
+      "death": {
+        "date": "1782",
+        "year": 1782
+      },
+      "famc": "F9",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I20": {
+      "id": "I20",
+      "first": "Elisabeth Juliane Friederica",
+      "surname": "Bach",
+      "fullName": "Elisabeth Juliane Friederica Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1726",
+        "year": 1726
+      },
+      "death": {
+        "date": "1781",
+        "year": 1781
+      },
+      "famc": "F9",
+      "fams": [
+        "F10"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I21": {
+      "id": "I21",
+      "first": "Johanna Carolina",
+      "surname": "Bach",
+      "fullName": "Johanna Carolina Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1737",
+        "year": 1737
+      },
+      "death": {
+        "date": "1781",
+        "year": 1781
+      },
+      "famc": "F9",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I22": {
+      "id": "I22",
+      "first": "Regina Susanna",
+      "surname": "Bach",
+      "fullName": "Regina Susanna Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1742",
+        "year": 1742
+      },
+      "death": {
+        "date": "1809",
+        "year": 1809
+      },
+      "famc": "F9",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I23": {
+      "id": "I23",
+      "first": "Johann Christoph",
+      "surname": "Altnikol",
+      "fullName": "Johann Christoph Altnikol",
+      "gender": "M",
+      "birth": {
+        "date": "1720",
+        "year": 1720
+      },
+      "death": {
+        "date": "1759",
+        "year": 1759
+      },
+      "fams": [
+        "F10"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I24": {
+      "id": "I24",
+      "first": "Johann Sebastian",
+      "surname": "Altnikol",
+      "fullName": "Johann Sebastian Altnikol",
+      "gender": "M",
+      "birth": {
+        "date": "1749",
+        "year": 1749
+      },
+      "death": {
+        "date": "1749",
+        "year": 1749
+      },
+      "famc": "F10",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I25": {
+      "id": "I25",
+      "first": "Lucia Elisabeth",
+      "surname": "Munchhusen",
+      "fullName": "Lucia Elisabeth Munchhusen",
+      "gender": "F",
+      "birth": {
+        "date": "1728",
+        "year": 1728
+      },
+      "death": {
+        "date": "1803",
+        "year": 1803
+      },
+      "fams": [
+        "F11"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I26": {
+      "id": "I26",
+      "first": "Anna Philippiana Friederica",
+      "surname": "Bach",
+      "fullName": "Anna Philippiana Friederica Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1755",
+        "year": 1755
+      },
+      "death": {
+        "date": "1804",
+        "year": 1804
+      },
+      "famc": "F11",
+      "fams": [
+        "F12"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I27": {
+      "id": "I27",
+      "first": "Wilhelm Friedrich Ernst",
+      "surname": "Bach",
+      "fullName": "Wilhelm Friedrich Ernst Bach",
+      "gender": "M",
+      "birth": {
+        "date": "1759",
+        "year": 1759
+      },
+      "death": {
+        "date": "1845",
+        "year": 1845
+      },
+      "famc": "F11",
+      "fams": [
+        "F13"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I28": {
+      "id": "I28",
+      "first": "Christina Luise",
+      "surname": "Bach",
+      "fullName": "Christina Luise Bach",
+      "gender": "F",
+      "death": {
+        "date": "1859",
+        "year": 1859
+      },
+      "famc": "F11",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I29": {
+      "id": "I29",
+      "first": "Wilhelm Ernst",
+      "surname": "Colson",
+      "fullName": "Wilhelm Ernst Colson",
+      "gender": "M",
+      "fams": [
+        "F12"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": true
+    },
+    "I30": {
+      "id": "I30",
+      "first": "Charlotte Philippina",
+      "surname": "Elerdt",
+      "fullName": "Charlotte Philippina Elerdt",
+      "gender": "F",
+      "birth": {
+        "date": "1780",
+        "year": 1780
+      },
+      "death": {
+        "date": "1801",
+        "year": 1801
+      },
+      "fams": [
+        "F13"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I31": {
+      "id": "I31",
+      "first": "Carolina Augusta Wilhelmine",
+      "surname": "Bach",
+      "fullName": "Carolina Augusta Wilhelmine Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1800",
+        "year": 1800
+      },
+      "death": {
+        "date": "1871",
+        "year": 1871
+      },
+      "famc": "F13",
+      "fams": [
+        "F14"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I32": {
+      "id": "I32",
+      "first": "Juliane Friederica",
+      "surname": "Bach",
+      "fullName": "Juliane Friederica Bach",
+      "gender": "F",
+      "birth": {
+        "date": "1800",
+        "year": 1800
+      },
+      "famc": "F13",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I33": {
+      "id": "I33",
+      "first": "Ludwig Albrecht Hermann",
+      "surname": "Ritter",
+      "fullName": "Ludwig Albrecht Hermann Ritter",
+      "gender": "M",
+      "fams": [
+        "F14"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": true
+    }
+  },
+  "families": {
+    "F1": {
+      "id": "F1",
+      "husband": "I1",
+      "children": [
+        "I2"
+      ]
+    },
+    "F2": {
+      "id": "F2",
+      "husband": "I2",
+      "children": [
+        "I3",
+        "I8"
+      ]
+    },
+    "F3": {
+      "id": "F3",
+      "husband": "I3",
+      "children": [
+        "I4",
+        "I5"
+      ]
+    },
+    "F4": {
+      "id": "F4",
+      "husband": "I5",
+      "children": [
+        "I6"
+      ]
+    },
+    "F5": {
+      "id": "F5",
+      "husband": "I4",
+      "children": [
+        "I7"
+      ]
+    },
+    "F6": {
+      "id": "F6",
+      "husband": "I8",
+      "children": [
+        "I9",
+        "I10"
+      ]
+    },
+    "F7": {
+      "id": "F7",
+      "husband": "I9",
+      "wife": "I11",
+      "children": [
+        "I12",
+        "I13"
+      ]
+    },
+    "F8": {
+      "id": "F8",
+      "husband": "I12",
+      "wife": "I6",
+      "children": [
+        "I14",
+        "I15"
+      ]
+    },
+    "F9": {
+      "id": "F9",
+      "husband": "I12",
+      "wife": "I16",
+      "children": [
+        "I17",
+        "I18",
+        "I19",
+        "I20",
+        "I21",
+        "I22"
+      ]
+    },
+    "F10": {
+      "id": "F10",
+      "husband": "I23",
+      "wife": "I20",
+      "children": [
+        "I24"
+      ]
+    },
+    "F11": {
+      "id": "F11",
+      "husband": "I18",
+      "wife": "I25",
+      "children": [
+        "I26",
+        "I27",
+        "I28"
+      ]
+    },
+    "F12": {
+      "id": "F12",
+      "husband": "I29",
+      "wife": "I26",
+      "children": []
+    },
+    "F13": {
+      "id": "F13",
+      "husband": "I27",
+      "wife": "I30",
+      "children": [
+        "I31",
+        "I32"
+      ]
+    },
+    "F14": {
+      "id": "F14",
+      "husband": "I33",
+      "wife": "I31",
+      "children": []
+    }
+  },
+  "media": {}
+}

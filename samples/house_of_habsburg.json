@@ -1,0 +1,842 @@
+{
+  "meta": {
+    "title": "House of Habsburg (Pedigree Collapse & Consanguinity)",
+    "compiler": "Public Domain / CC0 Historical Genealogy Benchmark",
+    "version": "1.0",
+    "lastUpdated": "2026-11-22T06:19:02.038Z",
+    "totalPeople": 33,
+    "totalFamilies": 17
+  },
+  "people": {
+    "I1": {
+      "id": "I1",
+      "first": "",
+      "surname": "Otto II",
+      "fullName": " Otto II",
+      "gender": "M",
+      "birth": {
+        "date": "1096",
+        "year": 1096
+      },
+      "death": {
+        "date": "1111",
+        "year": 1111
+      },
+      "fams": [
+        "F1"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I2": {
+      "id": "I2",
+      "first": "",
+      "surname": "Werner II",
+      "fullName": " Werner II",
+      "gender": "M",
+      "birth": {
+        "date": "1111",
+        "year": 1111
+      },
+      "death": {
+        "date": "1167",
+        "year": 1167
+      },
+      "famc": "F1",
+      "fams": [
+        "F2"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I3": {
+      "id": "I3",
+      "first": "",
+      "surname": "Otto III",
+      "fullName": " Otto III",
+      "gender": "M",
+      "birth": {
+        "date": "1166",
+        "year": 1166
+      },
+      "death": {
+        "date": "1174",
+        "year": 1174
+      },
+      "famc": "F2",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I4": {
+      "id": "I4",
+      "first": "",
+      "surname": "Albert III",
+      "fullName": " Albert III",
+      "gender": "M",
+      "birth": {
+        "date": "1167",
+        "year": 1167
+      },
+      "death": {
+        "date": "1199",
+        "year": 1199
+      },
+      "famc": "F2",
+      "fams": [
+        "F3"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I5": {
+      "id": "I5",
+      "first": "",
+      "surname": "Rudolf II",
+      "fullName": " Rudolf II",
+      "gender": "M",
+      "birth": {
+        "date": "1199",
+        "year": 1199
+      },
+      "death": {
+        "date": "1232",
+        "year": 1232
+      },
+      "famc": "F3",
+      "fams": [
+        "F4"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I6": {
+      "id": "I6",
+      "first": "",
+      "surname": "Rudolf III",
+      "fullName": " Rudolf III",
+      "gender": "M",
+      "birth": {
+        "date": "1232",
+        "year": 1232
+      },
+      "death": {
+        "date": "1259",
+        "year": 1259
+      },
+      "famc": "F4",
+      "fams": [
+        "F5"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I7": {
+      "id": "I7",
+      "first": "",
+      "surname": "Albert IV",
+      "fullName": " Albert IV",
+      "gender": "M",
+      "birth": {
+        "date": "1232",
+        "year": 1232
+      },
+      "death": {
+        "date": "1240",
+        "year": 1240
+      },
+      "famc": "F4",
+      "fams": [
+        "F8"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I8": {
+      "id": "I8",
+      "first": "",
+      "surname": "Eberhard I",
+      "fullName": " Eberhard I",
+      "gender": "M",
+      "birth": {
+        "date": "1249",
+        "year": 1249
+      },
+      "death": {
+        "date": "1289",
+        "year": 1289
+      },
+      "famc": "F5",
+      "fams": [
+        "F6"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I9": {
+      "id": "I9",
+      "first": "",
+      "surname": "Gottfried I",
+      "fullName": " Gottfried I",
+      "gender": "M",
+      "birth": {
+        "date": "1249",
+        "year": 1249
+      },
+      "death": {
+        "date": "1271",
+        "year": 1271
+      },
+      "famc": "F5",
+      "fams": [
+        "F7"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I10": {
+      "id": "I10",
+      "first": "",
+      "surname": "Kiburg Line",
+      "fullName": " Kiburg Line",
+      "gender": "M",
+      "birth": {
+        "date": "1284",
+        "year": 1284
+      },
+      "death": {
+        "date": "1314",
+        "year": 1314
+      },
+      "famc": "F6",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I11": {
+      "id": "I11",
+      "first": "",
+      "surname": "Laufenburg Line",
+      "fullName": " Laufenburg Line",
+      "gender": "M",
+      "birth": {
+        "date": "1271",
+        "year": 1271
+      },
+      "death": {
+        "date": "1308",
+        "year": 1308
+      },
+      "famc": "F7",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I12": {
+      "id": "I12",
+      "first": "",
+      "surname": "Rudolph I",
+      "fullName": " Rudolph I",
+      "gender": "M",
+      "birth": {
+        "date": "1 May 1218",
+        "year": 1218
+      },
+      "death": {
+        "date": "15 Jul 1291",
+        "year": 1291
+      },
+      "famc": "F8",
+      "fams": [
+        "F9"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I13": {
+      "id": "I13",
+      "first": "",
+      "surname": "Albert I",
+      "fullName": " Albert I",
+      "gender": "M",
+      "birth": {
+        "date": "Jul 1255",
+        "year": 1255
+      },
+      "death": {
+        "date": "1 May 1308",
+        "year": 1308
+      },
+      "famc": "F9",
+      "fams": [
+        "F11"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I14": {
+      "id": "I14",
+      "first": "",
+      "surname": "Rudolph II",
+      "fullName": " Rudolph II",
+      "gender": "M",
+      "birth": {
+        "date": "1270",
+        "year": 1270
+      },
+      "death": {
+        "date": "10 May 1290",
+        "year": 1290
+      },
+      "famc": "F9",
+      "fams": [
+        "F10"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I15": {
+      "id": "I15",
+      "first": "",
+      "surname": "John Parricida",
+      "fullName": " John Parricida",
+      "gender": "M",
+      "birth": {
+        "date": "1290",
+        "year": 1290
+      },
+      "death": {
+        "date": "13 Dec 1312",
+        "year": 1312
+      },
+      "famc": "F10",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I16": {
+      "id": "I16",
+      "first": "",
+      "surname": "Rudolf I",
+      "fullName": " Rudolf I",
+      "gender": "M",
+      "birth": {
+        "date": "1281",
+        "year": 1281
+      },
+      "death": {
+        "date": "4 Jul 1307",
+        "year": 1307
+      },
+      "famc": "F11",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I17": {
+      "id": "I17",
+      "first": "",
+      "surname": "Frederick I",
+      "fullName": " Frederick I",
+      "gender": "M",
+      "birth": {
+        "date": "1289",
+        "year": 1289
+      },
+      "death": {
+        "date": "13 Jan 1330",
+        "year": 1330
+      },
+      "famc": "F11",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I18": {
+      "id": "I18",
+      "first": "",
+      "surname": "Leopold I",
+      "fullName": " Leopold I",
+      "gender": "M",
+      "birth": {
+        "date": "4 Aug 1290",
+        "year": 1290
+      },
+      "death": {
+        "date": "28 Feb 1326",
+        "year": 1326
+      },
+      "famc": "F11",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I19": {
+      "id": "I19",
+      "first": "",
+      "surname": "Albert II",
+      "fullName": " Albert II",
+      "gender": "M",
+      "birth": {
+        "date": "12 Dec 1298",
+        "year": 1298
+      },
+      "death": {
+        "date": "16 Aug 1358",
+        "year": 1358
+      },
+      "famc": "F11",
+      "fams": [
+        "F12"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I20": {
+      "id": "I20",
+      "first": "",
+      "surname": "Otto IV",
+      "fullName": " Otto IV",
+      "gender": "M",
+      "birth": {
+        "date": "23 Jul 1301",
+        "year": 1301
+      },
+      "death": {
+        "date": "17 Feb 1339",
+        "year": 1339
+      },
+      "famc": "F11",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I21": {
+      "id": "I21",
+      "first": "",
+      "surname": "Albert III",
+      "fullName": " Albert III",
+      "gender": "M",
+      "birth": {
+        "date": "9 Sep 1349",
+        "year": 1349
+      },
+      "death": {
+        "date": "29 Aug 1395",
+        "year": 1395
+      },
+      "famc": "F12",
+      "fams": [
+        "F13"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I22": {
+      "id": "I22",
+      "first": "",
+      "surname": "Frederick III",
+      "fullName": " Frederick III",
+      "gender": "M",
+      "birth": {
+        "date": "1358",
+        "year": 1358
+      },
+      "death": {
+        "date": "1362",
+        "year": 1362
+      },
+      "famc": "F12",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I23": {
+      "id": "I23",
+      "first": "",
+      "surname": "Rudolf IV",
+      "fullName": " Rudolf IV",
+      "gender": "M",
+      "birth": {
+        "date": "1 Nov 1339",
+        "year": 1339
+      },
+      "death": {
+        "date": "27 Jul 1365",
+        "year": 1365
+      },
+      "famc": "F12",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I24": {
+      "id": "I24",
+      "first": "",
+      "surname": "Leopold III",
+      "fullName": " Leopold III",
+      "gender": "M",
+      "birth": {
+        "date": "1 Nov 1351",
+        "year": 1351
+      },
+      "death": {
+        "date": "9 Jul 1386",
+        "year": 1386
+      },
+      "famc": "F12",
+      "fams": [
+        "F15"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I25": {
+      "id": "I25",
+      "first": "",
+      "surname": "Albert IV",
+      "fullName": " Albert IV",
+      "gender": "M",
+      "birth": {
+        "date": "1395",
+        "year": 1395
+      },
+      "death": {
+        "date": "1404",
+        "year": 1404
+      },
+      "famc": "F13",
+      "fams": [
+        "F14"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I26": {
+      "id": "I26",
+      "first": "",
+      "surname": "Albert II",
+      "fullName": " Albert II",
+      "gender": "M",
+      "birth": {
+        "date": "1404",
+        "year": 1404
+      },
+      "death": {
+        "date": "1439",
+        "year": 1439
+      },
+      "famc": "F14",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I27": {
+      "id": "I27",
+      "first": "",
+      "surname": "William the Ambitious",
+      "fullName": " William the Ambitious",
+      "gender": "M",
+      "birth": {
+        "date": "1386",
+        "year": 1386
+      },
+      "death": {
+        "date": "1406",
+        "year": 1406
+      },
+      "famc": "F15",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I28": {
+      "id": "I28",
+      "first": "",
+      "surname": "Leopold IV",
+      "fullName": " Leopold IV",
+      "gender": "M",
+      "birth": {
+        "date": "1386",
+        "year": 1386
+      },
+      "death": {
+        "date": "1411",
+        "year": 1411
+      },
+      "famc": "F15",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I29": {
+      "id": "I29",
+      "first": "",
+      "surname": "Ernest the Iron",
+      "fullName": " Ernest the Iron",
+      "gender": "M",
+      "birth": {
+        "date": "1406",
+        "year": 1406
+      },
+      "death": {
+        "date": "1424",
+        "year": 1424
+      },
+      "famc": "F15",
+      "fams": [
+        "F16"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I30": {
+      "id": "I30",
+      "first": "",
+      "surname": "Frederick IV",
+      "fullName": " Frederick IV",
+      "gender": "M",
+      "birth": {
+        "date": "1402",
+        "year": 1402
+      },
+      "death": {
+        "date": "1439",
+        "year": 1439
+      },
+      "famc": "F15",
+      "fams": [
+        "F17"
+      ],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I31": {
+      "id": "I31",
+      "first": "",
+      "surname": "Frederick III",
+      "fullName": " Frederick III",
+      "gender": "M",
+      "birth": {
+        "date": "21 Sep 1415",
+        "year": 1415
+      },
+      "death": {
+        "date": "19 Aug 1493",
+        "year": 1493
+      },
+      "famc": "F16",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I32": {
+      "id": "I32",
+      "first": "",
+      "surname": "Albert VI",
+      "fullName": " Albert VI",
+      "gender": "M",
+      "birth": {
+        "date": "12 Dec 1418",
+        "year": 1418
+      },
+      "death": {
+        "date": "2 Dec 1463",
+        "year": 1463
+      },
+      "famc": "F16",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    },
+    "I33": {
+      "id": "I33",
+      "first": "",
+      "surname": "Sigismund",
+      "fullName": " Sigismund",
+      "gender": "M",
+      "birth": {
+        "date": "26 Oct 1427",
+        "year": 1427
+      },
+      "death": {
+        "date": "4 Mar 1496",
+        "year": 1496
+      },
+      "famc": "F17",
+      "fams": [],
+      "notes": [],
+      "attributes": {},
+      "isLiving": false
+    }
+  },
+  "families": {
+    "F1": {
+      "id": "F1",
+      "husband": "I1",
+      "children": [
+        "I2"
+      ]
+    },
+    "F2": {
+      "id": "F2",
+      "husband": "I2",
+      "children": [
+        "I3",
+        "I4"
+      ]
+    },
+    "F3": {
+      "id": "F3",
+      "husband": "I4",
+      "children": [
+        "I5"
+      ]
+    },
+    "F4": {
+      "id": "F4",
+      "husband": "I5",
+      "children": [
+        "I6",
+        "I7"
+      ]
+    },
+    "F5": {
+      "id": "F5",
+      "husband": "I6",
+      "children": [
+        "I8",
+        "I9"
+      ]
+    },
+    "F6": {
+      "id": "F6",
+      "husband": "I8",
+      "children": [
+        "I10"
+      ]
+    },
+    "F7": {
+      "id": "F7",
+      "husband": "I9",
+      "children": [
+        "I11"
+      ]
+    },
+    "F8": {
+      "id": "F8",
+      "husband": "I7",
+      "children": [
+        "I12"
+      ]
+    },
+    "F9": {
+      "id": "F9",
+      "husband": "I12",
+      "children": [
+        "I13",
+        "I14"
+      ]
+    },
+    "F10": {
+      "id": "F10",
+      "husband": "I14",
+      "children": [
+        "I15"
+      ]
+    },
+    "F11": {
+      "id": "F11",
+      "husband": "I13",
+      "children": [
+        "I16",
+        "I17",
+        "I18",
+        "I19",
+        "I20"
+      ]
+    },
+    "F12": {
+      "id": "F12",
+      "husband": "I19",
+      "children": [
+        "I21",
+        "I22",
+        "I23",
+        "I24"
+      ]
+    },
+    "F13": {
+      "id": "F13",
+      "husband": "I21",
+      "children": [
+        "I25"
+      ]
+    },
+    "F14": {
+      "id": "F14",
+      "husband": "I25",
+      "children": [
+        "I26"
+      ]
+    },
+    "F15": {
+      "id": "F15",
+      "husband": "I24",
+      "children": [
+        "I27",
+        "I28",
+        "I29",
+        "I30"
+      ]
+    },
+    "F16": {
+      "id": "F16",
+      "husband": "I29",
+      "children": [
+        "I31",
+        "I32"
+      ]
+    },
+    "F17": {
+      "id": "F17",
+      "husband": "I30",
+      "children": [
+        "I33"
+      ]
+    }
+  },
+  "media": {}
+}

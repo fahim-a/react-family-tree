@@ -18,10 +18,10 @@ import {
   Moon,
   FileJson,
   FileText,
-  RotateCcw,
   Sparkles,
   PenLine,
-  Lock
+  Lock,
+  Database
 } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -55,7 +55,44 @@ export const App: React.FC = () => {
   // Tree data state
   const [treeData, setTreeData] = useState<TreeData>(() => getSampleTreeWithMedia());
   const [currentDatasetName, setCurrentDatasetName] = useState<string>('Hawthorne Dynasty (4 Generations)');
+  const [selectedDatasetId, setSelectedDatasetId] = useState<string>('hawthorne');
+  const [isLoadingDataset, setIsLoadingDataset] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'canvas' | 'docs'>('canvas');
+
+  // Switch between pre-packaged historical datasets and custom trees
+  const handleDatasetChange = async (id: string) => {
+    setSelectedDatasetId(id);
+    setIsLoadingDataset(true);
+    try {
+      if (id === 'hawthorne') {
+        setTreeData(getSampleTreeWithMedia());
+        setCurrentDatasetName('Hawthorne Dynasty (4 Generations)');
+      } else if (id === 'queen_victoria') {
+        const mod = await import('../../samples/queen_victoria.json');
+        setTreeData(normalizeTreeData(mod.default || mod));
+        setCurrentDatasetName('Queen Victoria & Royal Descendants (487 People)');
+      } else if (id === 'tudor') {
+        const mod = await import('../../samples/tudor_dynasty.json');
+        setTreeData(normalizeTreeData(mod.default || mod));
+        setCurrentDatasetName('House of Tudor (English Royalty 1485-1603)');
+      } else if (id === 'habsburg') {
+        const mod = await import('../../samples/house_of_habsburg.json');
+        setTreeData(normalizeTreeData(mod.default || mod));
+        setCurrentDatasetName('House of Habsburg (Pedigree Collapse Benchmark)');
+      } else if (id === 'bach') {
+        const mod = await import('../../samples/bach_dynasty.json');
+        setTreeData(normalizeTreeData(mod.default || mod));
+        setCurrentDatasetName('Johann Sebastian Bach Musical Dynasty (5 Generations)');
+      } else if (id === 'blank') {
+        setTreeData(createEmptyTree());
+        setCurrentDatasetName('New Blank Tree');
+      }
+    } catch (err: any) {
+      alert(`Failed to load dataset: ${err.message}`);
+    } finally {
+      setIsLoadingDataset(false);
+    }
+  };
 
   // Handle custom GEDCOM or JSON file upload
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,6 +111,7 @@ export const App: React.FC = () => {
             const normalized = normalizeTreeData(parsed);
             if (Object.keys(normalized.people).length > 0) {
               setTreeData(normalized);
+              setSelectedDatasetId('custom');
               setCurrentDatasetName(file.name);
             } else {
               alert('Invalid family tree JSON: no individuals found in dataset.');
@@ -88,6 +126,7 @@ export const App: React.FC = () => {
         try {
           const parsed = parseGedcom(content);
           setTreeData(parsed);
+          setSelectedDatasetId('custom');
           setCurrentDatasetName(file.name);
         } catch (err: any) {
           alert(`Failed to parse GEDCOM file: ${err.message}`);
@@ -96,26 +135,6 @@ export const App: React.FC = () => {
     };
     reader.readAsText(file);
     e.target.value = '';
-  };
-
-  const loadSample = () => {
-    setTreeData(getSampleTreeWithMedia());
-    setCurrentDatasetName('Hawthorne Dynasty (4 Generations)');
-  };
-
-  const loadQueenVictoria = async () => {
-    try {
-      const mod = await import('../../samples/queen_victoria.json');
-      setTreeData(normalizeTreeData(mod.default || mod));
-      setCurrentDatasetName('Queen Victoria & Royal Descendants (487 People)');
-    } catch (err: any) {
-      alert(`Failed to load Queen Victoria dataset: ${err.message}`);
-    }
-  };
-
-  const startBlankTree = () => {
-    setTreeData(createEmptyTree());
-    setCurrentDatasetName('New Blank Tree');
   };
 
   // Metrics
@@ -232,42 +251,37 @@ export const App: React.FC = () => {
         <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl border ${isDark ? 'bg-slate-900/40 border-slate-800/80' : 'bg-white border-slate-200 shadow-sm'
           }`}>
           <div className="flex items-center gap-3 flex-wrap">
-            <div className="text-xs text-slate-400">
-              Active Dataset: <strong className={`font-semibold ml-1 ${isDark ? 'text-white' : 'text-slate-900'}`}>{currentDatasetName}</strong>
+            <div className="flex items-center gap-2">
+              <label className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+                <Database className="w-3.5 h-3.5 text-sky-400" />
+                <span className="hidden sm:inline">Select Preset:</span>
+              </label>
+              <select
+                value={selectedDatasetId}
+                onChange={e => handleDatasetChange(e.target.value)}
+                disabled={isLoadingDataset}
+                className={`text-xs font-medium rounded-lg px-2.5 py-1.5 border transition cursor-pointer outline-none focus:ring-2 focus:ring-sky-500/50 ${
+                  isDark
+                    ? 'bg-slate-800 border-slate-700 text-white hover:bg-slate-750'
+                    : 'bg-white border-slate-300 text-slate-800 hover:bg-slate-50 shadow-sm'
+                }`}
+              >
+                <option value="hawthorne">Hawthorne Dynasty (16 people · Photo Albums)</option>
+                <option value="queen_victoria">Queen Victoria & Royal Descendants (487 people · 7 gens)</option>
+                <option value="tudor">House of Tudor (268 people · English Royalty)</option>
+                <option value="habsburg">House of Habsburg (33 people · Consanguinity)</option>
+                <option value="bach">Johann Sebastian Bach Dynasty (33 people · 5 gens)</option>
+                <option value="blank">+ New Blank Tree</option>
+                {selectedDatasetId === 'custom' && (
+                  <option value="custom">Uploaded: {currentDatasetName}</option>
+                )}
+              </select>
             </div>
 
-            {currentDatasetName !== 'Hawthorne Dynasty (4 Generations)' && (
-              <button
-                onClick={loadSample}
-                className="text-xs text-sky-500 hover:text-sky-400 underline underline-offset-2 flex items-center gap-1 font-medium"
-              >
-                <RotateCcw className="w-3 h-3" /> Hawthorne Sample
-              </button>
-            )}
-
-            <button
-              onClick={loadQueenVictoria}
-              className={`text-xs px-2.5 py-1 rounded-lg border font-medium transition flex items-center gap-1.5 ${
-                currentDatasetName.includes('Queen Victoria')
-                  ? 'bg-purple-600/20 border-purple-500 text-purple-300 font-semibold'
-                  : isDark
-                  ? 'border-slate-700 hover:bg-slate-800 text-purple-400'
-                  : 'border-slate-200 hover:bg-purple-50 text-purple-700'
-              }`}
-              title="Load 487 European royals spanning 7 generations"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-              Queen Victoria (487 Royals)
-            </button>
-
-            {editable && (
-              <button
-                onClick={startBlankTree}
-                className={`text-xs px-2.5 py-1 rounded-lg border font-medium transition ${isDark ? 'border-slate-700 hover:bg-slate-800 text-slate-300' : 'border-slate-200 hover:bg-slate-100 text-slate-700'
-                  }`}
-              >
-                + New Blank Tree
-              </button>
+            {isLoadingDataset && (
+              <span className="text-xs text-sky-400 animate-pulse flex items-center gap-1">
+                <Sparkles className="w-3 h-3 animate-spin" /> Loading tree...
+              </span>
             )}
           </div>
 
