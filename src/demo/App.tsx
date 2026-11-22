@@ -21,7 +21,8 @@ import {
   Sparkles,
   PenLine,
   Lock,
-  Database
+  Database,
+  Scale
 } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -156,9 +157,18 @@ export const App: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="font-bold text-sm tracking-tight">React Family Tree</h1>
-                <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-500 border border-emerald-500/30">
-                  MIT Open Source
-                </span>
+                <a
+                  href="https://github.com/fahim-a/react-family-tree/blob/main/LICENSE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-1.5 text-xs transition group ml-0.5 ${
+                    isDark ? 'text-slate-400 hover:text-sky-400' : 'text-slate-500 hover:text-sky-600'
+                  }`}
+                  title="View MIT License"
+                >
+                  <Scale className={`w-3.5 h-3.5 ${isDark ? 'text-slate-400 group-hover:text-slate-300' : 'text-slate-500 group-hover:text-slate-700'}`} />
+                  <span className={`font-normal group-hover:underline ${isDark ? 'text-sky-400' : 'text-sky-600'}`}>MIT license</span>
+                </a>
                 <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30 hidden md:inline">
                   GEDCOM 5.5.x & 7.0
                 </span>
