@@ -103,6 +103,16 @@ export const App: React.FC = () => {
     setCurrentDatasetName('Hawthorne Dynasty (4 Generations)');
   };
 
+  const loadQueenVictoria = async () => {
+    try {
+      const mod = await import('../../samples/queen_victoria.json');
+      setTreeData(normalizeTreeData(mod.default || mod));
+      setCurrentDatasetName('Queen Victoria & Royal Descendants (487 People)');
+    } catch (err: any) {
+      alert(`Failed to load Queen Victoria dataset: ${err.message}`);
+    }
+  };
+
   const startBlankTree = () => {
     setTreeData(createEmptyTree());
     setCurrentDatasetName('New Blank Tree');
@@ -231,9 +241,24 @@ export const App: React.FC = () => {
                 onClick={loadSample}
                 className="text-xs text-sky-500 hover:text-sky-400 underline underline-offset-2 flex items-center gap-1 font-medium"
               >
-                <RotateCcw className="w-3 h-3" /> Reset Sample
+                <RotateCcw className="w-3 h-3" /> Hawthorne Sample
               </button>
             )}
+
+            <button
+              onClick={loadQueenVictoria}
+              className={`text-xs px-2.5 py-1 rounded-lg border font-medium transition flex items-center gap-1.5 ${
+                currentDatasetName.includes('Queen Victoria')
+                  ? 'bg-purple-600/20 border-purple-500 text-purple-300 font-semibold'
+                  : isDark
+                  ? 'border-slate-700 hover:bg-slate-800 text-purple-400'
+                  : 'border-slate-200 hover:bg-purple-50 text-purple-700'
+              }`}
+              title="Load 487 European royals spanning 7 generations"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+              Queen Victoria (487 Royals)
+            </button>
 
             {editable && (
               <button
